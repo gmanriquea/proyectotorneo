@@ -13,8 +13,10 @@ import java.util.*;
 public class Prueba2 {
 
     /**
-     * @param args the command line arguments
+     * @param  the command line arguments
      */
+    //metodo statico para crear un equipo, el argumento es un ArrayList de un Equipo revisa si esta lleno o no
+    //
     private static ArrayList<Equipo> crearequipo(ArrayList<Equipo> equipo){
         Scanner sc= new Scanner(System.in); //Scanner para las entradas
         System.out.print("Inserte la cantidad de grupos que desea agregar: ");
@@ -95,16 +97,16 @@ public class Prueba2 {
     public static void main(String[] args) {
         // TODO code application logic here
          // TODO code application logic here
-        String respfinal="N";
+        String respfinal="S";
         while (respfinal.equals("S")){
             Scanner sc= new Scanner(System.in); //Scanner para las entradas
             System.out.println("Bienvenido al programa de clasificaciones");
             ArrayList<Equipo> equipos = new ArrayList<>();
             equipos = crearequipo(equipos);
             System.out.println(equipos.size());
-            imprimirequipos(equipos);
-            //Primer menu de opciones
+            
 
+            //Primer menu de opciones
             Integer respuesta1 = 0;
             Integer[][] primer ;
             while(respuesta1!=2){
@@ -143,11 +145,15 @@ public class Prueba2 {
                                 System.out.println((i+1)+")"+equipos.get(primer[i][0]).getNombre()+" vs "+equipos.get(primer[i][1]).getNombre());
                             }
                         }
+                        else{
+                            System.out.println(valores.size()/2);
+                        }
                     }
                     case 3 -> imprimirequipos(equipos);
                     default -> System.out.println("Has ingresado una opcion invalida, vuelve a intentarlo");
                 }
             }
+            
             Integer resp2=0;
             while(resp2!=4 && resp2!=5){
                 //Segundo menu de opciones
@@ -164,5 +170,4 @@ public class Prueba2 {
             }
         }
     }
-    
 }
